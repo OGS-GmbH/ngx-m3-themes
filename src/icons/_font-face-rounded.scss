@@ -1,0 +1,580 @@
+/* General */
+@mixin font-face-bold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded";
+		font-style: normal;
+		font-weight: 700;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded-Bold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-semibold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded";
+		font-style: normal;
+		font-weight: 600;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded-SemiBold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-medium() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded";
+		font-style: normal;
+		font-weight: 500;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded-Medium.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-regular() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded-Regular.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded";
+		font-style: normal;
+		font-weight: 300;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded-Light.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-extra-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded";
+		font-style: normal;
+		font-weight: 200;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded-ExtraLight.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-thin() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded";
+		font-style: normal;
+		font-weight: 100;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded-Thin.ttf") format("truetype");
+	}
+}
+
+/* 28pt */
+@mixin font-face-28pt-bold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 28pt";
+		font-style: normal;
+		font-weight: 700;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_28pt-Bold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-28pt-semibold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 28pt";
+		font-style: normal;
+		font-weight: 600;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_28pt-SemiBold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-28pt-medium() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 28pt";
+		font-style: normal;
+		font-weight: 500;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_28pt-Medium.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-28pt-regular() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 28pt";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_28pt-Regular.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-28pt-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 28pt";
+		font-style: normal;
+		font-weight: 300;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_28pt-Light.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-28pt-extra-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 28pt";
+		font-style: normal;
+		font-weight: 200;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_28pt-ExtraLight.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-28pt-thin() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 28pt";
+		font-style: normal;
+		font-weight: 100;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_28pt-Thin.ttf") format("truetype");
+	}
+}
+
+/* 36pt */
+@mixin font-face-36pt-bold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 36pt";
+		font-style: normal;
+		font-weight: 700;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_36pt-Bold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-36pt-semibold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 36pt";
+		font-style: normal;
+		font-weight: 600;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_28pt-SemiBold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-36pt-medium() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 36pt";
+		font-style: normal;
+		font-weight: 500;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_28pt-Medium.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-36pt-regular() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 36pt";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_36pt-Regular.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-36pt-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 36pt";
+		font-style: normal;
+		font-weight: 300;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_36pt-Light.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-36pt-extra-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 36pt";
+		font-style: normal;
+		font-weight: 200;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_36pt-ExtraLight.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-36pt-thin() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 36pt";
+		font-style: normal;
+		font-weight: 100;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_36pt-Thin.ttf") format("truetype");
+	}
+}
+
+/* 48pt */
+@mixin font-face-48pt-bold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 48pt";
+		font-style: normal;
+		font-weight: 700;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_48pt-Bold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-48pt-semibold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 48pt";
+		font-style: normal;
+		font-weight: 600;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_48pt-SemiBold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-48pt-medium() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 48pt";
+		font-style: normal;
+		font-weight: 500;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_48pt-Medium.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-48pt-regular() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 48pt";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_48pt-Regular.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-48pt-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 48pt";
+		font-style: normal;
+		font-weight: 300;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_48pt-Light.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-48pt-extra-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 48pt";
+		font-style: normal;
+		font-weight: 200;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_48pt-ExtraLight.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-48pt-thin() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded 48pt";
+		font-style: normal;
+		font-weight: 100;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_48pt-Thin.ttf") format("truetype");
+	}
+}
+
+/* General filled */
+@mixin font-face-filled-bold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled";
+		font-style: normal;
+		font-weight: 700;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled-Bold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-semibold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled";
+		font-style: normal;
+		font-weight: 600;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled-SemiBold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-medium() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled";
+		font-style: normal;
+		font-weight: 500;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled-Medium.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-regular() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled-Regular.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled";
+		font-style: normal;
+		font-weight: 300;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled-Light.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-extra-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled";
+		font-style: normal;
+		font-weight: 200;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled-ExtraLight.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-thin() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled";
+		font-style: normal;
+		font-weight: 100;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled-Thin.ttf") format("truetype");
+	}
+}
+
+/* 28pt */
+@mixin font-face-filled-28pt-bold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 28pt";
+		font-style: normal;
+		font-weight: 700;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_28pt-Bold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-28pt-semibold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 28pt";
+		font-style: normal;
+		font-weight: 600;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_28pt-SemiBold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-28pt-medium() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 28pt";
+		font-style: normal;
+		font-weight: 500;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_28pt-Medium.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-28pt-regular() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 28pt";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_28pt-Regular.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-28pt-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 28pt";
+		font-style: normal;
+		font-weight: 300;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_28pt-Light.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-28pt-extra-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 28pt";
+		font-style: normal;
+		font-weight: 200;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_28pt-ExtraLight.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-28pt-thin() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 28pt";
+		font-style: normal;
+		font-weight: 100;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_28pt-Thin.ttf") format("truetype");
+	}
+}
+
+/* 36pt */
+@mixin font-face-filled-36pt-bold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 36pt";
+		font-style: normal;
+		font-weight: 700;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_36pt-Bold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-36pt-semibold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 36pt";
+		font-style: normal;
+		font-weight: 600;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_28pt-SemiBold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-36pt-medium() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 36pt";
+		font-style: normal;
+		font-weight: 500;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_28pt-Medium.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-36pt-regular() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 36pt";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_36pt-Regular.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-36pt-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 36pt";
+		font-style: normal;
+		font-weight: 300;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_36pt-Light.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-36pt-extra-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 36pt";
+		font-style: normal;
+		font-weight: 200;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_36pt-ExtraLight.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-36pt-thin() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 36pt";
+		font-style: normal;
+		font-weight: 100;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_36pt-Thin.ttf") format("truetype");
+	}
+}
+
+/* 48pt */
+@mixin font-face-filled-48pt-bold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 48pt";
+		font-style: normal;
+		font-weight: 700;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_48pt-Bold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-48pt-semibold() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 48pt";
+		font-style: normal;
+		font-weight: 600;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_48pt-SemiBold.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-48pt-medium() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 48pt";
+		font-style: normal;
+		font-weight: 500;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_48pt-Medium.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-48pt-regular() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 48pt";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_48pt-Regular.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-48pt-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 48pt";
+		font-style: normal;
+		font-weight: 300;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_48pt-Light.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-48pt-extra-light() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 48pt";
+		font-style: normal;
+		font-weight: 200;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_48pt-ExtraLight.ttf") format("truetype");
+	}
+}
+
+@mixin font-face-filled-48pt-thin() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded Filled 48pt";
+		font-style: normal;
+		font-weight: 100;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded_Filled_48pt-Thin.ttf") format("truetype");
+	}
+}
+
+/* Variable */
+@mixin font-face-variable() {
+	@font-face {
+		font-display: swap;
+		font-family: "Material Icons Rounded";
+		font-variation-settings: "wght" 100 700,
+		"opsz" 20 48,
+		"FILL" 0 1,
+		"GRAD" -25 200;
+		src: url("../assets/icons/material-rounded/MaterialSymbolsRounded-VariableFont_FILL,GRAD,opsz,wght.ttf") format("truetype");
+	}
+}

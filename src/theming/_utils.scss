@@ -1,0 +1,6 @@
+@use "sass:list";
+
+@function list-has-item($list, $index) {
+  @return list.index($list, $index) != null;
+}
+

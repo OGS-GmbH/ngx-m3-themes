@@ -1,0 +1,58 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+
+@function _estimate-hue($hues, $hue, $prev-hue, $next-hue) {
+	$weight: math.div($next-hue - $hue, $next-hue - $prev-hue) * 100%;
+
+	@return color.mix(map.get($hues, $prev-hue), map.get($hues, $next-hue), $weight);
+}
+
+/* stylelint-disable */
+@function _patch-missing-hues($palette) {
+	$neutral: map.get($palette, neutral);
+	$palette: map.set($palette, neutral, 4, _estimate-hue($neutral, 4, 0, 10));
+	$palette: map.set($palette, neutral, 6, _estimate-hue($neutral, 6, 0, 10));
+	$palette: map.set($palette, neutral, 12, _estimate-hue($neutral, 12, 10, 20));
+	$palette: map.set($palette, neutral, 17, _estimate-hue($neutral, 17, 10, 20));
+	$palette: map.set($palette, neutral, 22, _estimate-hue($neutral, 22, 20, 25));
+	$palette: map.set($palette, neutral, 24, _estimate-hue($neutral, 24, 20, 25));
+	$palette: map.set($palette, neutral, 87, _estimate-hue($neutral, 87, 80, 90));
+	$palette: map.set($palette, neutral, 92, _estimate-hue($neutral, 92, 90, 95));
+	$palette: map.set($palette, neutral, 94, _estimate-hue($neutral, 94, 90, 95));
+	$palette: map.set($palette, neutral, 96, _estimate-hue($neutral, 96, 95, 98));
+
+	@return $palette;
+}
+/* stylelint-enable */
+
+@function _patch-error-palette($palette) {
+	@return map.merge(
+		$palette,
+		(
+			error: (
+				0: #000000,
+				10: #351513,
+				20: #461C19,
+				25: #56231F,
+				30: #6A2A25,
+				35: #752E29,
+				40: #8D3832,
+				50: #B0463E,
+				60: #C06B65,
+				70: #D0908B,
+				80: #DFB5B2,
+				90: #E7C7C5,
+				95: #F7ECEC,
+				98: #F9F1F1,
+				99: #FBF5F4,
+				100: #FFFFFF
+			),
+		)
+	);
+}
+
+@function apply-patches($palette) {
+	@return _patch-error-palette($palette);
+}
+

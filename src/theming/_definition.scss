@@ -1,0 +1,125 @@
+@use "sass:map";
+@use "sass:list";
+@use "@angular/material" as mat;
+@use "./internals" as internals;
+
+/*
+ * Used hue for following color roles are corrected to newer Angular Material Versions.
+ * See: https://github.com/angular/components/pull/29902
+ */
+@function _define-custom-tokens($type, $name, $palette) {
+  $color-key: $name;
+  $on-color-key: "on-" + $name;
+  $color-container-key: $name + "-container";
+  $on-color-container-key: "on-" + $name + "-container"; 
+  $color-fixed-key: $name + "-fixed";
+  $color-fixed-dim-key: $name + "-fixed-dim";
+  $on-color-fixed-key: "on-" + $name + "-fixed";
+  $on-color-fixed-variant-key: "on-" + $name + "-fixed-variant";
+  
+  $color-value: map.get($palette, if($type == light, 40, 80));
+  $on-color-value: map.get($palette, if($type == light, 100, 20));
+  $color-container-value: map.get($palette, if($type == light, 90, 30));
+  $on-color-container-value: map.get($palette, if($type == light, 10, 90));
+  $color-fixed-value: map.get($palette, 90);
+  $color-fixed-dim-value: map.get($palette, 80);
+  $on-color-fixed-value: map.get($palette, 10);
+  $on-color-fixed-variant-value: map.get($palette, 30);
+
+  @return (
+    $color-key: $color-value,
+    $on-color-key: $on-color-value,
+    $color-container-key: $color-container-value,
+    $on-color-container-key: $on-color-container-value,
+    $color-fixed-key: $color-fixed-value,
+    $color-fixed-dim-key: $color-fixed-dim-value,
+    $on-color-fixed-key: $on-color-fixed-value,
+    $on-color-fixed-variant-key: $on-color-fixed-variant-value
+  );
+}
+
+@function _define-custom-theme($colors, $theme-type) {
+  $tokens: ();
+
+  @each $name, $palette in $colors {
+    @if $palette != null {
+      $custom-tokens: _define-custom-tokens($theme-type, $name, $palette);
+      $tokens: map.merge($tokens, $custom-tokens);
+    }
+  }
+
+  @return (
+    internals.$theming: (
+      palettes: $colors,
+      color-tokens: (
+        internals.$tokens-root: $tokens
+      )
+    )
+  )
+}
+
+@function _parse-color-definition($config) {
+  $colors: map.get($config, color);
+  $theme-type: map.get($colors, theme-type);
+
+  $angular-colors: ();
+
+  @each $item in internals.$internal-color {
+    $value: map.get($colors, $item);
+
+    @if $value != null {
+      $angular-colors: map.set($angular-colors, $item, $value);
+      $colors: map.remove($colors, $item);
+    }
+  }
+
+  @return (
+    custom: $colors,
+    angular: $angular-colors,
+    theme-type: $theme-type or light
+  );
+}
+
+@function _get-angular-definition($config, $colors) {
+  $cleaned-config: map.remove($config, color);
+
+  @return map.deep-merge($cleaned-config, (
+    color: $colors
+  ));
+}
+
+@function _validate-custom-definition($definition) {
+  $error-palettes: ();
+
+  @each $name, $value in $definition {
+    @if list.index(internals.$internal-palettes, $name) != null {
+      $error-palettes: list.append($error-palettes, $name);
+    }
+  }
+
+  @return $error-palettes;
+}
+
+@function define-theme($config) {
+  $parsed-color-definition: _parse-color-definition($config);
+  $theme-type: map-get($parsed-color-definition, theme-type);
+
+  $custom-color-definition: map-get($parsed-color-definition, custom);
+  $error-palettes: _validate-custom-definition($custom-color-definition);
+
+  @if list.length($error-palettes) != 0 {
+    @error "Palettes with names " + $error-palettes + " are considered as conflicting since there are meant for internal purpose.";
+  }
+  
+  $custom-theme: _define-custom-theme($custom-color-definition, $theme-type);
+
+  $angular-color-definition: map-get($parsed-color-definition, angular);
+  $angular-definition: _get-angular-definition($config, $angular-color-definition);
+  $angular-theme: mat.define-theme($angular-definition);
+
+  @return map.deep-merge(
+    $angular-theme,
+    $custom-theme
+  );
+}
+

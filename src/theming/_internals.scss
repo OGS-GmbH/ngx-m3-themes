@@ -1,0 +1,83 @@
+@use "sass:map";
+@use "sass:list";
+@use "./utils" as utils;
+
+$theming: _mat-theming-internals-do-not-access;
+$tokens-root: (mdc, theme);
+
+$internal-tokens: (
+  primary,
+  on-primary,
+  primary-container,
+  on-primary-container,
+  primary-fixed,
+  primary-fixed-dim,
+  on-primary-fixed,
+  on-primary-fixed-variant,
+  secondary,
+  on-secondary,
+  secondary-container,
+  on-secondary-container,
+  secondary-fixed,
+  secondary-fixed-dim,
+  on-secondary-fixed,
+  on-secondary-fixed-variant,
+  tertiary,
+  on-tertiary,
+  tertiary-container,
+  on-tertiary-container,
+  tertiary-fixed,
+  tertiary-fixed-dim,
+  on-tertiary-fixed,
+  on-tertiary-fixed-variant,
+  error,
+  on-error,
+  error-container,
+  on-error-container,
+  surface-dim,
+  surface,
+  surface-bright,
+  surface-container-lowest,
+  surface-container-low,
+  surface-container,
+  surface-container-high,
+  surface-container-highest,
+  on-surface,
+  on-surface-variant,
+  outline,
+  outline-variant,
+  inverse-surface,
+  inverse-on-surface,
+  inverse-primary,
+  scrim,
+  shadow
+);
+
+$internal-color-palettes: (
+  primary,
+  tertiary
+);
+
+$internal-color-keys: (
+  theme-type,
+  system-variables-prefix,
+  use-system-variables
+);
+
+$internal-color: list.join($internal-color-palettes, $internal-color-keys);
+
+$internal-palettes: (
+  secondary,
+  neutral,
+  neutral-variant,
+  error
+);
+
+@function is-internal-token($token) {
+  @return utils.list-has-item($internal-tokens, $token);
+};
+
+@function is-internal-palette($palette) {
+  @return utils.list-has-item($internal-palettes, $palette);
+};
+

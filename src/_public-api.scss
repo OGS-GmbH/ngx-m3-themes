@@ -1,0 +1,23 @@
+@forward "./typographies/font-face" as mat-roboto-*;
+@forward "./icons/font-face" as mat-icon-*;
+@forward "./icons/font-face-outlined" as mat-icon-outlined-*;
+@forward "./icons/font-face-rounded" as mat-icon-rounded-*;
+@forward "./icons/font-face-sharp" as mat-icon-sharp-*;
+
+@forward "./theming/definition";
+@forward "./theming/inspection";
+@forward "./themes/ogs";
+@forward "./palettes/blue";
+@forward "./palettes/gray";
+@forward "./palettes/green";
+@forward "./palettes/light-blue";
+@forward "./palettes/light-gray";
+@forward "./palettes/orange";
+@forward "./palettes/petrol";
+@forward "./palettes/red";
+@forward "./palettes/yellow";
+
+@forward "./themes/ogs";
+
+@forward "./theming/inspection";
+@forward "./theming/definition";
