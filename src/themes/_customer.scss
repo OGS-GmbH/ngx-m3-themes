@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../theming/definition" as definition;
+@use "../palettes/orange" as *;
+@use "../palettes/petrol" as *;
+@use "../palettes/red" as *;
+@use "../palettes/green" as *;
+@use "../palettes/light-blue" as *;
+@use "../palettes/yellow" as *;
+@use "../palettes/gray" as *;
+@use "../palettes/light-gray" as *;
+@use "../palettes/blue" as *;
+@use "../palettes/customer" as *;
+
+
+
+@function _patch-palette($palette) {
+  @return map.merge(
+    $palette,
+    (
+      secondary: $blue-palette,
+      neutral: $gray-palette,
+      neutral-variant: $light-gray-palette,
+      error: mat.$red-palette
+    )
+  );
+};
+
+$customer-primary: _patch-palette($red-palette);
+$customer-tertiary: _patch-palette($blue-palette);
+
+$customer-theme: definition.define-theme((
+	color: (
+		theme-type: light,
+		primary: $customer-primary,
+    tertiary: $customer-tertiary,
+		green: $green-palette,
+		blue: $light-blue-palette,
+		yellow: $yellow-palette
+	)
+));
+
