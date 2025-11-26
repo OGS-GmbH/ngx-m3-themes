@@ -1,6 +1,6 @@
 {
 	"name": "@ogs-gmbh/ngx-m3-themes",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Customizable Angular Material 3 (MDC) themes and helpful SCSS utilities for consistent, modern UI styling in Angular applications.",
 	"keywords": [
 		"light-theme",
