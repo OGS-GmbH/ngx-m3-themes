@@ -40,9 +40,9 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@angular/build": "^20.3.12",
-    "@angular/cli": "^20.3.12",
-    "@angular/compiler-cli": "^20.3.15",
+    "@angular/build": "^21.0.1",
+    "@angular/cli": "^21.0.1",
+    "@angular/compiler-cli": "^21.0.2",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.39.1",
@@ -59,7 +59,7 @@
     "globals": "^15.15.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
-    "ng-packagr": "^20.3.2",
+    "ng-packagr": "^21.0.0",
     "npm-package-json-lint": "^8.0.0",
     "stylelint": "^16.26.1",
     "stylelint-scss": "^6.12.1",
@@ -68,13 +68,13 @@
     "typescript-eslint": "^8.48.0"
   },
   "peerDependencies": {
-    "@angular/animations": "^20.3.15",
-    "@angular/common": "^20.3.15",
-    "@angular/compiler": "^20.3.15",
-    "@angular/core": "^20.3.15",
-    "@angular/forms": "^20.3.15",
+    "@angular/animations": "^21.0.2",
+    "@angular/common": "^21.0.2",
+    "@angular/compiler": "^21.0.2",
+    "@angular/core": "^21.0.2",
+    "@angular/forms": "^21.0.2",
     "@angular/material": "^20.2.14",
-    "@angular/router": "^20.3.15",
+    "@angular/router": "^21.0.2",
     "@ogs-gmbh/ngx-utils": "^1.0.0",
     "rxjs": "~7.8.1"
   },
