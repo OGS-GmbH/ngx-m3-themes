@@ -9,6 +9,8 @@ export default {
     ".husky/**/*",
     ".idea/**/*",
     "node_modules/**/*",
-    "dist/**/*"
+    "dist/**/*",
+    "src/theming/*",
+    "src/themes/*"
   ]
 };

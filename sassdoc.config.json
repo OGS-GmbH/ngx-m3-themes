@@ -1,0 +1,18 @@
+{
+  "dest": "docs/sass",
+  "package": "./package.json",
+  "theme": "default",
+  "autofill": ["requires", "throws"],
+  "groups": {
+    "themes": "Theme Mixins",
+    "utilities": "Utility Functions & Mixins",
+    "variables": "CSS Variables & Tokens",
+    "colors": "Color System",
+    "typography": "Typography"
+  },
+  "display": {
+    "access": ["public"],
+    "watermark": true
+  },
+  "verbose": true
+}

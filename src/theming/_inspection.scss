@@ -2,6 +2,15 @@
 @use "@angular/material" as mat;
 @use "./internals" as internals;
 
+/// Resolves a color token from the theme's internal token map.
+/// @group Inspection
+/// @name _resolve-token
+/// @access private
+/// @parameter {Map} $theme - The Material 3 theme object
+/// @parameter {String} $token - The token name to resolve
+/// @return {Color} The resolved color value
+/// @throw Error if the token is not defined in the theme
+/// @author Simon Kovtyk
 @function _resolve-token($theme, $token) {
   $is-internal-token: internals.is-internal-token($token);
 
@@ -20,8 +29,19 @@
   }
 
   @return map.get($internal-tokens-root, $token);
-};
+}
 
+/// Resolves a color from a palette at a specific hue.
+/// @group Inspection
+/// @name _resolve-palette
+/// @access private
+/// @parameter {Map} $theme - The Material 3 theme object
+/// @parameter {String} $palette - The palette name (e.g., 'primary', 'secondary')
+/// @parameter {Number} $hue - The hue value from the palette (e.g., 50, 100, 500)
+/// @return {Color} The resolved color value
+/// @throw Error if the palette doesn't exist
+/// @throw Error if the hue is not defined in the palette
+/// @author Simon Kovtyk
 @function _resolve-palette($theme, $palette, $hue) {
   $is-internal-palette: internals.is-internal-palette($palette);
 
@@ -47,8 +67,24 @@
   }
 
   @return map.get($internal-palette, $hue);
-};
+}
 
+/// Retrieves a color from a Material 3 theme by token name or palette/hue combination.
+/// This function provides a unified interface for accessing theme colors, supporting both:
+/// - Direct token access (1 argument)
+/// - Palette + hue access (2 arguments)
+/// @group Inspection
+/// @name get-theme-color
+/// @access public
+/// @parameter {Map} $theme - The Material 3 theme object to query
+/// @parameter {ArgList} $args - Variable arguments for color resolution
+///   - When 1 argument: `$token` - The token name (e.g., 'primary', 'on-surface')
+///   - When 2 arguments: `$palette, $hue` - The palette name and hue value
+/// @return {Color} The resolved color value from the theme
+/// @throw Error if theme version is not M3 (version 1)
+/// @throw Error if more than 2 arguments are provided
+/// @throw Error if the specified token or palette/hue combination doesn't exist
+/// @author Simon Kovtyk
 @function get-theme-color($theme, $args...) {
   $theme-version: mat.get-theme-version($theme);
 
@@ -65,5 +101,4 @@
   } @else {
     @error "Argument length is not supposed to be more then two arguments long.";
   }
-};
-
+}

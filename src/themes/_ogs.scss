@@ -11,6 +11,16 @@
 @use "../palettes/light-gray" as *;
 @use "../palettes/blue" as *;
 
+/// Adds Angular Material's required secondary palettes to a primary palette.
+/// Angular Material requires secondary, neutral, neutral-variant, and error palettes
+/// alongside each primary palette (primary/tertiary) for a complete theme.
+/// @group Theme
+/// @name _patch-palette
+/// @access private
+/// @parameter {Map} $palette 
+/// @return {Map} Color tokens map
+/// @author Simon Kovtyk
+
 @function _patch-palette($palette) {
   @return map.merge(
     $palette,
