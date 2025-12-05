@@ -3,10 +3,18 @@
 @use "@angular/material" as mat;
 @use "./internals" as internals;
 
-/*
- * Used hue for following color roles are corrected to newer Angular Material Versions.
- * See: https://github.com/angular/components/pull/29902
- */
+/// Generates M3 color tokens from a tonal palette.
+/// Creates color role tokens (primary, on-primary, primary-container, etc.)
+/// using appropriate tones for light (40/90/100) or dark (80/30/20) themes.
+/// @group Definition
+/// @name _define-custom-tokens
+/// @access private
+/// @parameter {'light' | 'dark'} $type - Theme type
+/// @parameter {String} $name - Color role name (e.g., 'primary')
+/// @parameter {Map} $palette - Tonal palette (keys 0-100)
+/// @return {Map} Color tokens map
+/// @link https://github.com/angular/components/pull/29902
+/// @author Simon Kovtyk
 @function _define-custom-tokens($type, $name, $palette) {
   $color-key: $name;
   $on-color-key: "on-" + $name;
@@ -38,6 +46,15 @@
   );
 }
 
+/// Builds a custom theme from multiple color palettes.
+/// Iterates through custom color definitions and generates tokens for each palette.
+/// @group Definition
+/// @name _define-custom-theme
+/// @access private
+/// @parameter {Map} $colors - Map of palette names to tonal palettes
+/// @parameter {'light' | 'dark'} $theme-type - Theme type
+/// @return {Map} Theme structure with color tokens
+/// @author Simon Kovtyk
 @function _define-custom-theme($colors, $theme-type) {
   $tokens: ();
 
@@ -55,9 +72,18 @@
         internals.$tokens-root: $tokens
       )
     )
-  )
+  );
 }
 
+/// Separates custom colors from Angular Material colors.
+/// Extracts Angular's built-in color palettes (primary, secondary, etc.) 
+/// from the config and returns custom palettes separately.
+/// @group Definition
+/// @name _parse-color-definition
+/// @access private
+/// @parameter {Map} $config - Theme configuration
+/// @return {Map} Map with 'custom', 'angular', and 'theme-type' keys'
+/// @author Simon Kovtyk
 @function _parse-color-definition($config) {
   $colors: map.get($config, color);
   $theme-type: map.get($colors, theme-type);
@@ -80,6 +106,16 @@
   );
 }
 
+
+/// Prepares Angular Material theme configuration.
+/// Removes color section from config and replaces it with Angular-only colors.
+/// @group Definition
+/// @name _get-angular-definition
+/// @access private
+/// @parameter {Map} $config - Original theme configuration
+/// @parameter {Map} $colors - Angular Material color definitions
+/// @return {Map} Configuration ready for Angular Material's define-theme
+/// @author Simon Kovtyk
 @function _get-angular-definition($config, $colors) {
   $cleaned-config: map.remove($config, color);
 
@@ -88,6 +124,14 @@
   ));
 }
 
+/// Validates custom palette names don't conflict with internal names.
+/// Checks that custom palette names don't use reserved Angular Material names.
+/// @group Definition
+/// @name _validate-custom-definition
+/// @access private
+/// @parameter {Map} $definition - Custom color definitions
+/// @return {List} List of conflicting palette names (empty if valid)
+/// @author Simon Kovtyk
 @function _validate-custom-definition($definition) {
   $error-palettes: ();
 
@@ -100,6 +144,18 @@
   @return $error-palettes;
 }
 
+
+
+/// Defines a theme that supports both Angular Material and custom color palettes.
+/// Angular Material's define-theme only recognizes standard palettes (primary, tertiary, etc.),
+/// so custom palettes are processed separately and merged into the final theme.
+/// @group Definition
+/// @name define-theme
+/// @access public
+/// @parameter {Map} $config - Theme configuration containing both Angular and custom color palettes
+/// @return {Map} Complete theme with Angular Material tokens and custom color tokens
+/// @throw Error if custom palette names conflict with Angular Material's internal palette names
+/// @author Simon Kovtyk
 @function define-theme($config) {
   $parsed-color-definition: _parse-color-definition($config);
   $theme-type: map-get($parsed-color-definition, theme-type);

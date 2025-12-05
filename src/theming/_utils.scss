@@ -1,6 +1,13 @@
 @use "sass:list";
 
-@function list-has-item($list, $index) {
-  @return list.index($list, $index) != null;
+/// Utility function that loops over a list to find a specific item. 
+/// @group Utils
+/// @name list-has-item
+/// @access private
+/// @parameter {List} $list - Could be a list such as $internal-tokens or $internal-palettes
+/// @parameter {String} $item - An item that we look for in a list such as a token or a palette
+/// @return {Boolean}  returns true if the item is present in the list and false otherwise.
+/// @author Simon Kovtyk
+@function list-has-item($list, $item) {
+  @return list.index($list, $item) != null;
 }
-

@@ -7,7 +7,7 @@
 	],
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
-		"outDir": "./dist/prod",
+		"outDir": "./dist/main",
 		"removeComments": true
 	}
 }

@@ -2,9 +2,35 @@
 @use "sass:list";
 @use "./utils" as utils;
 
+/// Internal theming namespace used by Angular Material.
+/// This constant references Angular Material's internal theming system.
+/// @group Internal
+/// @name $theming
+/// @type String
+/// @access private
+/// @author Simon Kovtyk
 $theming: _mat-theming-internals-do-not-access;
+
+/// Path to the root tokens map within the theme structure.
+/// Used to navigate the nested theme map structure.
+/// @group Internal
+/// @name $token-root
+/// @type List
+/// @access private
+/// @author Simon Kovtyk
 $tokens-root: (mdc, theme);
 
+/// List of all Material Design 3 semantic color tokens.
+/// These tokens represent the complete set of M3 color roles that can be
+/// used directly with the `get-theme-color()` function. Includes color roles
+/// for primary, secondary, tertiary, error, and surface variants.
+/// @group Internal
+/// @name $internal-tokens
+/// @type List
+/// @access private
+/// @see {function} is-internal-token
+/// @link https://m3.material.io/styles/color/roles Material Design 3 Color Roles
+/// @author Simon Kovtyk
 $internal-tokens: (
   primary,
   on-primary,
@@ -53,19 +79,49 @@ $internal-tokens: (
   shadow
 );
 
+/// List of Angular Material internal color palettes.
+/// These palettes are managed internally by Angular Material's theming system and set by the user.
+/// @group Internal
+/// @name $internal-color-palettes
+/// @type List
+/// @access private
+/// @author Simon Kovtyk
 $internal-color-palettes: (
   primary,
   tertiary
 );
 
+/// List of internal color configuration keys.
+/// These keys are used for theme-level configuration settings rather than color values themselves.
+/// @group Internal
+/// @name $internal-color-keys
+/// @type List
+/// @access private
+/// @author Simon Kovtyk
 $internal-color-keys: (
   theme-type,
   system-variables-prefix,
   use-system-variables
 );
 
+/// Combined list of internal color palettes and configuration keys.
+/// This merged list is used for validation and internal processing of
+/// color-related theme properties.#
+/// @group Internal
+/// @name $internal-color
+/// @type List
+/// @access public
+/// @author Simon Kovtyk
 $internal-color: list.join($internal-color-palettes, $internal-color-keys);
 
+
+/// List of Angular Material internal color palettes.
+/// These palettes are managed internally by Angular Material's theming and are created by Angular Material based on the primary 
+/// @group Internal
+/// @name $internal-palettes
+/// @type List
+/// @access private
+/// @author Simon Kovtyk
 $internal-palettes: (
   secondary,
   neutral,
@@ -73,11 +129,26 @@ $internal-palettes: (
   error
 );
 
+
+/// Check if a specific token is part of internal-token
+/// @group Internal
+/// @name is-internal-token
+/// @access public
+/// @parameter {String} $token - The token to check
+/// @return {Boolean}  returns true if the token is present in internal-token and false otherwise.
+/// @author Simon Kovtyk
 @function is-internal-token($token) {
   @return utils.list-has-item($internal-tokens, $token);
-};
+}
 
+
+/// Check if a specific palette is part of internal-palettes
+/// @group Internal
+/// @name is-internal-palette
+/// @access public
+/// @parameter {String} $palette - The palette to check
+/// @return {Boolean}  returns true if the palette is present in internal-palettes and false otherwise.
+/// @author Simon Kovtyk
 @function is-internal-palette($palette) {
   @return utils.list-has-item($internal-palettes, $palette);
-};
-
+}
