@@ -35,7 +35,7 @@
   },
   "scripts": {
     "ci:build:main:production": "ng build --configuration production",
-    "ci:docs:extract:sassdoc": "sassdoc ./src -p > ./sassdoc.json && node ./prepare-sassdoc.js",
+    "ci:docs:extract:sassdoc": "sassdoc ./src -p",
     "ci:docs:main:vitepress": "vitepress build .vitepress",
     "ci:pr:commitlint:main:commitlint": "commitlint",
     "ci:pr:lint:main:eslint": "eslint .",
@@ -72,7 +72,8 @@
     "typedoc": "^0.28.15",
     "typescript": "~5.5.4",
     "typescript-eslint": "^8.2.0",
-    "vitepress": "2.0.0-alpha.15",
+    "sassdoc-extras": "^3",
+    "vitepress": "^1",
     "vitepress-plugin-group-icons": "^1.6.5"
   },
   "peerDependencies": {
@@ -89,6 +90,7 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "@parcel/watcher",
+      "core-js",
       "esbuild",
       "lmdb",
       "msgpackr-extract",
