@@ -10,40 +10,45 @@
 @use "../palettes/gray" as *;
 @use "../palettes/light-gray" as *;
 @use "../palettes/blue" as *;
+@use "@ogs-gmbh/ogsid-11-theme";
 
 @function _patch-palette($palette) {
   @return map.merge(
     $palette,
     (
-      secondary: $orange-palette,
-      neutral: $gray-palette,
-      neutral-variant: $light-gray-palette,
-      error: $red-palette
+      secondary: ogsid-11-theme.$orange-palette,
+      neutral: ogsid-11-theme.$gray-palette,
+      neutral-variant: ogsid-11-theme.$light-gray-palette,
+      error: ogsid-11-theme.$red-palette
     )
   );
 };
 
-$primary-palette: _patch-palette($petrol-palette);
-$tertiary-palette: _patch-palette($blue-palette);
+$primary-palette: _patch-palette(ogsid-11-theme.$petrol-palette);
+$tertiary-palette: _patch-palette(ogsid-11-theme.$blue-palette);
+
+$_theme-color: (
+  primary: ogsid-11-theme.$primary-palette,
+  tertiary: ogsid-11-theme.$tertiary-palette,
+  green: ogsid-11-theme.$green-palette,
+  blue: ogsid-11-theme.$light-blue-palette,
+  yellow: ogsid-11-theme.$yellow-palette
+);
 
 $light-ogs: definition.define-theme((
-	color: (
-		theme-type: light,
-		primary: $primary-palette,
-		tertiary: $tertiary-palette,
-		green: $green-palette,
-		blue: $light-blue-palette,
-		yellow: $yellow-palette
-	)
+	color: map.merge(
+    $_theme-color,
+    (
+      theme-type: light
+    )
+  )
 ));
 
 $dark-ogs: definition.define-theme((
-	color: (
-		theme-type: dark,
-		primary: $primary-palette,
-		tertiary: $tertiary-palette,
-		green: $green-palette,
-		blue: $light-blue-palette,
-		yellow: $yellow-palette,
-	)
+	color: map.merge(
+    $_theme-color,
+    (
+      theme-type: dark
+    )
+  )
 ));

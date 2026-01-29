@@ -13,7 +13,7 @@
 		"angular-theme",
 		"material3"
 	],
-	"homepage": "https://github.com/OGS-GmbH/ngx-m3-themes?tab=readme-ov-file",
+	"homepage": "https://ogs-gmbh.github.io/ngx-m3-themes/",
 	"bugs": "https://github.com/OGS-GmbH/ngx-m3-themes/issues",
 	"license": "MIT",
 	"author": "OGS GmbH",
@@ -29,66 +29,51 @@
 			"sass": "./_public-api.scss"
 		}
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/OGS-GmbH/ngx-m3-themes"
-	},
+	"repository": "github:OGS-GmbH/ngx-m3-themes",
 	"scripts": {
-		"ci:build:main:production": "ng build --configuration production",
+		"ci:build:main:production": "ng build",
+    "ci:docs:main:vitepress": "bash ./.vitepress/scripts/pre-vitepress.sh && vitepress build .vitepress",
 		"ci:pr:commitlint:main:commitlint": "commitlint",
 		"ci:pr:lint:main:eslint": "eslint .",
-		"prepare": "husky"
+		"prepare": "husky",
+    "vitepress": "bash ./.vitepress/scripts/pre-vitepress.sh && vitepress dev .vitepress",
+    "vitepress-preview": "vitepress preview .vitepress"
 	},
 	"devDependencies": {
-		"@angular-devkit/build-angular": "^18.2.12",
-		"@angular/cli": "^18.2.12",
-		"@angular/compiler-cli": "^18.2.13",
-		"@commitlint/cli": "^19.5.0",
-		"@commitlint/config-conventional": "^19.6.0",
-		"@eslint/js": "^9.9.0",
-		"@eslint/json": "^0.6.0",
-		"@eslint/markdown": "^6.2.1",
-		"@ogs-gmbh/linter": "^1.3.2",
-		"npm-package-json-lint": "^8.0.0",
-		"@stylistic/eslint-plugin-js": "^2.10.1",
-		"@stylistic/eslint-plugin-plus": "^2.10.1",
-		"@stylistic/eslint-plugin-ts": "^2.10.1",
-		"angular-eslint": "^18.3.0",
-		"eslint": "^9.9.0",
-		"eslint-plugin-security": "^3.0.1",
-		"eslint-plugin-unicorn": "^56.0.0",
-		"globals": "^15.13.0",
-		"husky": "^9.1.5",
-		"lint-staged": "^15.2.10",
-		"ng-packagr": "^18.2.1",
-		"stylelint": "^16.8.2",
-		"stylelint-scss": "^6.5.0",
+		"@angular/build": "^21.1.1",
+		"@angular/cli": "^21.1.1",
+		"@angular/compiler-cli": "^21.1.1",
+		"@commitlint/cli": "^20.3.1",
+		"@commitlint/config-conventional": "^20.3.1",
+		"@commitlint/prompt-cli": "^20.3.1",
+		"@eslint/js": "^9.39.2",
+		"@eslint/json": "^0.14.0",
+		"@eslint/markdown": "^7.5.1",
+		"@ogs-gmbh/linter": "^2.0.0",
+		"@ogs-gmbh/vitepress-plugin-sidebar": "^1.0.3",
+		"@ogs-gmbh/vitepress-theme": "^1.1.0",
+		"@stylistic/eslint-plugin": "^5.7.1",
+		"eslint-plugin-jsdoc": "^62.4.1",
+		"eslint-plugin-unicorn": "^56.0.1",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.7",
+		"ng-packagr": "^21.1.0",
+		"npm-package-json-lint": "^9.1.0",
 		"tslib": "^2.8.1",
-		"typescript": "~5.5.4",
-		"typescript-eslint": "^8.2.0"
+		"typescript": "~5.9.3"
 	},
 	"peerDependencies": {
-		"@angular/animations": "^18.2.1",
-		"@angular/common": "^18.2.1",
-		"@angular/compiler": "^18.2.1",
-		"@angular/core": "^18.2.1",
-		"@angular/forms": "^18.2.1",
-		"@angular/material": "^18.2.1",
-		"@angular/router": "^18.2.1",
-		"@ogs-gmbh/ngx-utils": "^1.0.0",
-		"rxjs": "~7.8.1"
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"@parcel/watcher",
-			"esbuild",
-			"lmdb",
-			"msgpackr-extract",
-			"nice-napi"
-		]
+		"@angular/animations": "^21",
+		"@angular/common": "^21",
+		"@angular/compiler": "^21",
+		"@angular/core": "^21",
+		"@angular/material": "^21",
+		"@ogs-gmbh/ngx-utils": "^2",
+		"@ogs-gmbh/ogsid-11-theme": "^1",
+		"rxjs": "~7.8.0"
 	},
 	"sideEffects": false,
 	"publishConfig": {
-		"directory": "dist/prod"
+		"directory": "dist/main"
 	}
 }
