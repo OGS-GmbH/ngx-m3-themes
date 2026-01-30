@@ -1,0 +1,51 @@
+@use "sass:map";
+
+$system-token-prefix: "mat-sys-";
+
+@function get-system-token-name ($token-name) {
+  @return $system-token-prefix + $token-name;
+}
+
+/// @see https://github.com/angular/components/blob/main/src/material/core/tokens/m3/_md-sys-color.scss
+@function define-system-tokens($palette-name, $palette-value) {
+  $color-key: $palette-name;
+  $on-color-key: "on-" + $palette-name;
+  $color-container-key: $palette-name + "-container";
+  $on-color-container-key: "on-" + $palette-name + "-container"; 
+  $color-fixed-key: $palette-name + "-fixed";
+  $color-fixed-dim-key: $palette-name + "-fixed-dim";
+  $on-color-fixed-key: "on-" + $palette-name + "-fixed";
+  $on-color-fixed-variant-key: "on-" + $palette-name + "-fixed-variant";
+  
+  $color-value: light-dark(
+    map.get($palette-value, 40),
+    map.get($palette-value, 80)
+  );
+  $on-color-value: light-dark(
+    map.get($palette-value, 100),
+    map.get($palette-value, 20)
+  );
+  $color-container-value: light-dark(
+    map.get($palette-value, 90),
+    map.get($palette-value, 30)
+  );
+  $on-color-container-value: light-dark(
+    map.get($palette-value, 30),
+    map.get($palette-value, 90)
+  );
+  $color-fixed-value: map.get($palette-value, 90);
+  $color-fixed-dim-value: map.get($palette-value, 80);
+  $on-color-fixed-value: map.get($palette-value, 10);
+  $on-color-fixed-variant-value: map.get($palette-value, 30);
+
+  @return (
+    $color-key: $color-value,
+    $on-color-key: $on-color-value,
+    $color-container-key: $color-container-value,
+    $on-color-container-key: $on-color-container-value,
+    $color-fixed-key: $color-fixed-value,
+    $color-fixed-dim-key: $color-fixed-dim-value,
+    $on-color-fixed-key: $on-color-fixed-value,
+    $on-color-fixed-variant-key: $on-color-fixed-variant-value
+  );
+}

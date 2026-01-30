@@ -1,0 +1,47 @@
+@use "sass:map";
+@use "@ogs-gmbh/ogsid-11-theme";
+@use "@angular/material" as mat;
+@use "./validation";
+@use "./utils";
+@use "./token";
+
+@mixin theme ($theme) {
+  $color: map.get($theme, color);
+
+  // Only one pallet present, so its clear to not generate custom tokens.
+  @if validation.is-palette($color) {
+    @include mat.theme($theme);
+  // Now we have a custom theme color, so we need to filter out the mat colors.
+  } @else {
+    $theme-type: map.get($theme, color-scheme);
+
+    @if $theme-type == null {
+      $theme-type: light;
+    }
+
+    $filtered-theme: validation.filter-theme-color($color);
+
+    @debug map.get($filtered-theme, custom);
+
+    @include mat.theme(
+      map.set(
+        $theme,
+        color,
+        map.get($filtered-theme, mat),
+      )
+    );
+
+    @each $palette-name, $palette-value in map.get($filtered-theme, custom) {
+      @each $token-name, $token-value in token.define-system-tokens(
+        $palette-name,
+        $palette-value
+      ) {
+        @debug $token-name;
+        @debug $token-value;
+        $system-token-name: token.get-system-token-name($token-name);
+
+        --#{$system-token-name}: #{$token-value};
+      }
+    }
+  }
+}

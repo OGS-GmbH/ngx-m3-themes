@@ -1,0 +1,11 @@
+@use "sass:map";
+
+@function has-keys ($keys, $map) {
+  @each $key in $keys {
+    @if not map.has-key($map, $key) {
+      @return false;
+    }
+  }
+
+  @return true;
+}

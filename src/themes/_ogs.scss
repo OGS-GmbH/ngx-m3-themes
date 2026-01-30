@@ -1,15 +1,5 @@
 @use "sass:map";
 @use "@angular/material" as mat;
-@use "../theming/definition" as definition;
-@use "../palettes/orange" as *;
-@use "../palettes/petrol" as *;
-@use "../palettes/red" as *;
-@use "../palettes/green" as *;
-@use "../palettes/light-blue" as *;
-@use "../palettes/yellow" as *;
-@use "../palettes/gray" as *;
-@use "../palettes/light-gray" as *;
-@use "../palettes/blue" as *;
 @use "@ogs-gmbh/ogsid-11-theme";
 
 @function _patch-palette($palette) {
@@ -28,27 +18,27 @@ $primary-palette: _patch-palette(ogsid-11-theme.$petrol-palette);
 $tertiary-palette: _patch-palette(ogsid-11-theme.$blue-palette);
 
 $_theme-color: (
-  primary: ogsid-11-theme.$primary-palette,
-  tertiary: ogsid-11-theme.$tertiary-palette,
+  primary: $primary-palette,
+  tertiary: $tertiary-palette,
   green: ogsid-11-theme.$green-palette,
   blue: ogsid-11-theme.$light-blue-palette,
   yellow: ogsid-11-theme.$yellow-palette
 );
 
-$light-ogs: definition.define-theme((
+$light-ogs: (
 	color: map.merge(
     $_theme-color,
     (
       theme-type: light
     )
   )
-));
+);
 
-$dark-ogs: definition.define-theme((
+$dark-ogs: (
 	color: map.merge(
     $_theme-color,
     (
       theme-type: dark
     )
   )
-));
+);

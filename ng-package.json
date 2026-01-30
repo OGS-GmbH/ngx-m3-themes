@@ -14,7 +14,7 @@
 		{
 			"glob": "**/*.(ttf|woff2)",
 			"followSymlinks": false,
-			"input": "./src",
+			"input": "./public",
 			"output": "./"
 		}
 	]
