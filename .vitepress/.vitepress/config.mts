@@ -44,7 +44,7 @@ export default defineConfig({
         text: "Guide",
         items: [
           { text: "Getting started", link: "/guide/" },
-          { text: "Custom color palettes", link: "/guide/custom-color-palettes" }
+          { text: "Custom Color Palettes", link: "/guide/custom-color-palettes" }
         ]
       },
       sidebarPlugin({
