@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/OGS-GmbH/ngx-m3-themes/compare/v1.1.0...v2.0.0) (2026-02-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to angular 22
+
+### Miscellaneous Chores
+
+* upgrade to angular 22 ([6a06f2a](https://github.com/OGS-GmbH/ngx-m3-themes/commit/6a06f2a6273ff152a503ea44c14211256ceeed97))
+
 ## [1.1.0](https://github.com/OGS-GmbH/ngx-m3-themes/compare/v1.0.0...v1.1.0) (2025-11-26)
 
 
