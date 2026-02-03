@@ -1,0 +1,18 @@
+@use "sass:map";
+
+/// Check if a map has all specified keys.
+/// @group Utilities
+/// @param {List} $keys - The list of keys to check for
+/// @param {Map} $map - The map to check against
+///
+/// @author Simon Kovtyk
+/// @since 2.0.0
+@function has-keys ($keys, $map) {
+  @each $key in $keys {
+    @if not map.has-key($map, $key) {
+      @return false;
+    }
+  }
+
+  @return true;
+}
