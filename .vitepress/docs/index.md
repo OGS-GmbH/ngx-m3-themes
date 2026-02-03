@@ -4,7 +4,7 @@ isHome: true
 
 hero:
   text: Theming Framework for Material Design 3
-  tagline: A lightweight Angular library for customizable Material Design 3 theming.
+  tagline: A theming system with full Material Design 3 support that enables custom color palettes, design tokens, and motion-compliant components.
   actions:
     - theme: brand
       text: Get started

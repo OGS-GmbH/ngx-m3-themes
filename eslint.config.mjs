@@ -41,7 +41,9 @@ export default defineConfig(
     ]
   },
   {
-    files: [ "**/*.html" ],
+    files: [
+      "**/*.html"
+    ],
     rules: ANGULAR_TEMPLATE_RULES_PRESET,
     languageOptions: {
       globals: { ...globals.browser },

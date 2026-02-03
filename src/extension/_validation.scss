@@ -2,6 +2,12 @@
 @use "./utils";
 @use "sass:map";
 
+/// Check if the provided theme color is a valid Angular Material palette.
+/// @group Validation
+/// @param {Map} $theme-color - The theme color map
+///
+/// @author Simon Kovtyk
+/// @since 2.0.0
 @function is-palette ($theme-color) {
   $expected-keys: map.keys(ogsid-11-theme.$red-palette);
 
@@ -11,6 +17,12 @@
 $mat-palettes: (primary, tertiary, theme-type);
 $default-theme-type: light;
 
+/// Filter out Angular Material specific colors from a custom theme color map.
+/// @group Validation
+/// @param {Map} $theme-color - The theme color map
+///
+/// @author Simon Kovtyk
+/// @since 2.0.0
 @function filter-theme-color ($theme-color) {
   $mat-theme-color: (
     primary: map.get($theme-color, primary),

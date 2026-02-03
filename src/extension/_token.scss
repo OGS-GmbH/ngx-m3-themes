@@ -1,12 +1,28 @@
 @use "sass:map";
 
+/// Prefix for Angular Material system tokens
+/// @group Custom color palettes
+/// @author Simon Kovtyk
+/// @since 2.0.0
 $system-token-prefix: "mat-sys-";
 
+/// Get system token name by adding the Angular Material system token prefix.
+/// @group Custom color palettes
+/// @param {String} $token-name - The base token name
+///
+/// @author Simon Kovtyk
+/// @since 2.0.0
 @function get-system-token-name ($token-name) {
   @return $system-token-prefix + $token-name;
 }
 
-/// @see https://github.com/angular/components/blob/main/src/material/core/tokens/m3/_md-sys-color.scss
+/// Define system tokens for a given custom palette.
+/// @group Custom color palettes
+/// @param {String} $palette-name - The name of the custom palette
+/// @link https://github.com/angular/components/blob/main/src/material/core/tokens/m3/_md-sys-color.scss
+///
+/// @author Simon Kovtyk
+/// @since 2.0.0
 @function define-system-tokens($palette-name, $palette-value) {
   $color-key: $palette-name;
   $on-color-key: "on-" + $palette-name;

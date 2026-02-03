@@ -5,6 +5,29 @@
 @use "./utils";
 @use "./token";
 
+/// Mixin used as wrapper to generate Angular Material (M3) themes with custom tokens.
+/// @group Custom color palettes
+/// @param {Map} $theme - The theme configuration map.
+/// @example scss
+///   @use "@ogs-gmbh/ogsid-11-theme" as ogs-theme;
+///   @use "@angular/material" as mat;
+///   @use "@ogs-gmbh/ngx-m3-themes";
+///   @use "./success-palette.scss";
+///
+///   html {
+///     @include ngx-m3-themes.theme((
+///       color: (
+///         primary: mat.$azure-palette,
+///         tertiary: mat.$blue-palette,
+///         success: $success-palette
+///       ),
+///       typography: Roboto,
+///       density: 0
+///     ));
+///   }
+///
+/// @author Simon Kovtyk
+/// @since 2.0.0
 @mixin theme ($theme) {
   $color: map.get($theme, color);
 

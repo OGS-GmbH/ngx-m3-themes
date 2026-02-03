@@ -2,7 +2,7 @@
 
 # ngx-m3-themes
 
-*A lightweight Angular library for customizable Material Design 3 theming.*
+*A theming system with full Material Design 3 support that enables custom color palettes, design tokens, and motion-compliant components.*
 
 ![Preview](./docs/preview.avif)
 

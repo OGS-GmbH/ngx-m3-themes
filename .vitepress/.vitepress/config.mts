@@ -7,7 +7,7 @@ import {sidebarPlugin} from "@ogs-gmbh/vitepress-plugin-sidebar"
 export default defineConfig({
   ignoreDeadLinks: true,
   title: "ngx-m3-themes",
-  description: "Customizable Angular Material 3 (MDC) themes and helpful SCSS utilities for consistent, modern UI styling in Angular applications.",
+  description: "A theming system with full Material Design 3 support that enables custom color palettes, design tokens, and motion-compliant components.",
   themeConfig: {
     externalLinkIcon: true,
     search: {
@@ -49,7 +49,18 @@ export default defineConfig({
       },
       sidebarPlugin({
         path: "./dist/vitepress-src/reference",
-        normalizeDirNames: true
+        normalizeDirNames: false,
+        normalizeDirNamesFn (dirName: string): string {
+          const words: string[] = dirName.split("-");
+
+          for (let i: number = 0; i < words.length; i++) {
+            const currentWord: string = words[i];
+
+            words[i] = currentWord.charAt(0).toUpperCase() + currentWord.slice(1);
+          }
+
+          return words.join(" ");
+        }
       }),
       {
         text: "Other",
