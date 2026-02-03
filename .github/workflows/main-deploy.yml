@@ -1,17 +1,24 @@
-name: main bump
+name: main deploy
 on:
+  push:
+    branches:
+      - "main"
   workflow_dispatch:
 
 permissions:
+  id-token: write
   contents: write
   pull-requests: write
+  pages: write
 
 jobs:
-  call-ci-bump:
-    uses: OGS-GmbH/reusable-github-actions/.github/workflows/ci-bump.yml@v1.0.2
+  call-npm-package-deploy:
+    uses: OGS-GmbH/reusable-github-actions/.github/workflows/npm-package-deploy.yml@v1.0.2
     secrets:
       GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+      NPM_ORG_OGS_GMBH_CI: ${{ secrets.NPM_ORG_OGS_GMBH_CI }}
+      MS_TEAMS_URL: ${{ secrets.MS_TEAMS_URL }}
     with:
-      config_file: ".release-please/main-config.json"
-      manifest_file: ".release-please/main-manifest.json"
-      target_branch: "main"
+      release_please_config_file: ".release-please/main-config.json"
+      release_please_manifest_file: ".release-please/main-manifest.json"
+      release_please_target_branch: "main"
