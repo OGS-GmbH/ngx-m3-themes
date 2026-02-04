@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/OGS-GmbH/ngx-m3-themes/compare/v2.0.0...v2.0.1) (2026-02-04)
+
+
+### Bug Fixes
+
+* invalid path in scss reference ([91b09b3](https://github.com/OGS-GmbH/ngx-m3-themes/commit/91b09b36397d05efdb2defce5f3d2bb2a3c177e1))
+
 ## [2.0.0](https://github.com/OGS-GmbH/ngx-m3-themes/compare/v1.1.0...v2.0.0) (2026-02-03)
 
 
