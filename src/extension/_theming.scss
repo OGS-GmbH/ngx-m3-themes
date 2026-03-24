@@ -44,8 +44,6 @@
 
     $filtered-theme: validation.filter-theme-color($color);
 
-    @debug map.get($filtered-theme, custom);
-
     @include mat.theme(
       map.set(
         $theme,
@@ -59,8 +57,6 @@
         $palette-name,
         $palette-value
       ) {
-        @debug $token-name;
-        @debug $token-value;
         $system-token-name: token.get-system-token-name($token-name);
 
         --#{$system-token-name}: #{$token-value};
