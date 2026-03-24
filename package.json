@@ -1,6 +1,6 @@
 {
 	"name": "@ogs-gmbh/ngx-m3-themes",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "A theming system with full Material Design 3 support that enables custom color palettes, design tokens, and motion-compliant components.",
 	"keywords": [
 		"light-theme",

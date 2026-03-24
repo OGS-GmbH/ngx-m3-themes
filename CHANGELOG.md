@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/OGS-GmbH/ngx-m3-themes/compare/v2.0.1...v2.0.2) (2026-03-24)
+
+
+### Bug Fixes
+
+* **theming:** remove debug statements ([#10](https://github.com/OGS-GmbH/ngx-m3-themes/issues/10)) ([2815781](https://github.com/OGS-GmbH/ngx-m3-themes/commit/281578143bfd354cfa076abc3a5340c8894585ce))
+
 ## [2.0.1](https://github.com/OGS-GmbH/ngx-m3-themes/compare/v2.0.0...v2.0.1) (2026-02-04)
 
 
